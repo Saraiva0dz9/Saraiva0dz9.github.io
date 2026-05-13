@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Currículo - Desenvolvedor Full Stack .NET Sênior | Blazor | C# | APIs REST | Cloud | DevOps">
+<meta name="keywords" content="Desenvolvedor Full Stack .NET, Blazor Developer, C# Senior, ASP.NET, Web API, Entity Framework, SQL Server, Oracle, AWS, Docker, Kubernetes, DevOps, Software Engineer">
+<title>Currículo — Desenvolvedor Full Stack .NET Sênior</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     RESET & BASE
+  ============================================================ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg-deep:     #06080f;
+    --bg-card:     #0d1120;
+    --bg-glass:    rgba(255,255,255,.035);
+    --border:      rgba(255,255,255,.07);
+    --accent:      #00d4ff;
+    --accent2:     #7c5cfc;
+    --accent3:     #00ffb2;
+    --text-hi:     #f0f4ff;
+    --text-mid:    #8b96b4;
+    --text-lo:     #4a5470;
+    --font-head:   'Syne', sans-serif;
+    --font-body:   'DM Sans', sans-serif;
+    --radius-sm:   8px;
+    --radius-md:   14px;
+    --radius-lg:   22px;
+    --glow:        0 0 40px rgba(0,212,255,.12);
+    --glow2:       0 0 40px rgba(124,92,252,.12);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg-deep);
+    color: var(--text-hi);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.65;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ============================================================
+     BACKGROUND DECORATION
+  ============================================================ */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 15% 10%, rgba(0,212,255,.07) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 85% 80%, rgba(124,92,252,.07) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ============================================================
+     LAYOUT WRAPPER
+  ============================================================ */
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* ============================================================
+     HERO / HEADER
+  ============================================================ */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: start;
+    padding: 52px 52px 48px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glow);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+
+  .hero-noise {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: .4;
+  }
+
+  .hero-left { position: relative; z-index: 1; }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(0,212,255,.1);
+    border: 1px solid rgba(0,212,255,.25);
+    color: var(--accent);
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: 5px 13px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    animation: fadeSlideDown .7s ease both;
+  }
+
+  .badge::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: .5; transform: scale(1.3); }
+  }
+
+  .hero-name {
+    font-family: var(--font-head);
+    font-size: clamp(2rem, 4.5vw, 3.1rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -.02em;
+    color: var(--text-hi);
+    margin-bottom: 10px;
+    animation: fadeSlideDown .7s .1s ease both;
+  }
+
+  .hero-name span {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-title {
+    font-family: var(--font-head);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-mid);
+    letter-spacing: .04em;
+    margin-bottom: 22px;
+    animation: fadeSlideDown .7s .2s ease both;
+  }
+
+  .hero-summary {
+    font-size: .95rem;
+    color: var(--text-mid);
+    max-width: 560px;
+    line-height: 1.75;
+    animation: fadeSlideDown .7s .3s ease both;
+  }
+
+  .hero-summary strong { color: var(--text-hi); font-weight: 500; }
+
+  /* Contact strip */
+  .contact-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+    animation: fadeSlideDown .7s .4s ease both;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .82rem;
+    color: var(--text-mid);
+    background: var(--bg-glass);
+    border: 1px solid var(--border);
+    padding: 7px 14px;
+    border-radius: 100px;
+    transition: all .25s;
+  }
+
+  .contact-item:hover {
+    color: var(--accent);
+    border-color: rgba(0,212,255,.3);
+    background: rgba(0,212,255,.06);
+  }
+
+  .contact-item svg { flex-shrink: 0; }
+
+  /* Avatar area */
+  .hero-right {
+    position: relative;
+    z-index: 1;
+    animation: fadeSlideDown .7s .2s ease both;
+  }
+
+  .avatar-wrap {
+    width: 130px;
+    height: 130px;
+    position: relative;
+  }
+
+  .avatar-ring {
+    width: 130px; height: 130px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    padding: 3px;
+    animation: rotateSlow 8s linear infinite;
+  }
+
+  .avatar-inner {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: var(--bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-head);
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: -.02em;
+  }
+
+  @keyframes rotateSlow {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  /* ============================================================
+     SECTION TITLE
+  ============================================================ */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .section-label h2 {
+    font-family: var(--font-head);
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ============================================================
+     GRID LAYOUT
+  ============================================================ */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 24px;
+  }
+
+  .col-left  { display: flex; flex-direction: column; gap: 24px; }
+  .col-right { display: flex; flex-direction: column; gap: 24px; }
+
+  /* ============================================================
+     CARD BASE
+  ============================================================ */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color .3s, box-shadow .3s;
+  }
+
+  .card:hover {
+    border-color: rgba(0,212,255,.18);
+    box-shadow: var(--glow);
+  }
+
+  /* ============================================================
+     EXPERIENCE TIMELINE
+  ============================================================ */
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 0 20px;
+    position: relative;
+    padding-bottom: 36px;
+    animation: fadeSlideUp .6s ease both;
+  }
+
+  .tl-item:last-child { padding-bottom: 0; }
+
+  .tl-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .tl-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+    flex-shrink: 0;
+    margin-top: 5px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tl-dot.purple { background: var(--accent2); box-shadow: 0 0 10px var(--accent2); }
+  .tl-dot.green  { background: var(--accent3); box-shadow: 0 0 10px var(--accent3); }
+
+  .tl-connector {
+    flex: 1;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    margin-top: 6px;
+    opacity: .3;
+  }
+
+  .tl-item:last-child .tl-connector { display: none; }
+
+  .tl-content { padding-top: 0; }
+
+  .tl-meta {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+
+  .tl-company {
+    font-family: var(--font-head);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-hi);
+  }
+
+  .tl-period {
+    font-size: .78rem;
+    color: var(--accent);
+    background: rgba(0,212,255,.1);
+    border: 1px solid rgba(0,212,255,.2);
+    padding: 3px 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+
+  .tl-role {
+    font-size: .88rem;
+    color: var(--accent2);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .tl-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .tl-bullets li {
+    font-size: .875rem;
+    color: var(--text-mid);
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .tl-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: .7rem;
+    top: 4px;
+  }
+
+  .tl-bullets li strong { color: var(--text-hi); font-weight: 500; }
+
+  .tl-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  .tag {
+    font-size: .73rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    background: rgba(255,255,255,.04);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 100px;
+    letter-spacing: .04em;
+    transition: all .2s;
+  }
+
+  .tag:hover {
+    color: var(--accent);
+    border-color: rgba(0,212,255,.3);
+    background: rgba(0,212,255,.07);
+  }
+
+  /* ============================================================
+     SKILL BARS
+  ============================================================ */
+  .skill-list { display: flex; flex-direction: column; gap: 14px; }
+
+  .skill-item {}
+
+  .skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+    font-size: .83rem;
+  }
+
+  .skill-name { color: var(--text-hi); font-weight: 500; }
+  .skill-pct  { color: var(--accent); font-weight: 600; font-size: .78rem; }
+
+  .skill-bar {
+    height: 5px;
+    background: rgba(255,255,255,.06);
+    border-radius: 100px;
+    overflow: hidden;
+  }
+
+  .skill-fill {
+    height: 100%;
+    border-radius: 100px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    width: 0%;
+    transition: width 1.2s cubic-bezier(.25,.8,.25,1);
+  }
+
+  .skill-fill.green { background: linear-gradient(90deg, var(--accent3), var(--accent)); }
+  .skill-fill.purple { background: linear-gradient(90deg, var(--accent2), var(--accent)); }
+  
+  .scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  transition: .3s;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+  /* ============================================================
+     TECH STACK GRID
+  ============================================================ */
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .stack-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-glass);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 9px 12px;
+    font-size: .78rem;
+    color: var(--text-mid);
+    font-weight: 500;
+    transition: all .25s;
+    cursor: default;
+  }
+
+  .stack-pill:hover {
+    color: var(--text-hi);
+    border-color: rgba(0,212,255,.25);
+    background: rgba(0,212,255,.06);
+    transform: translateY(-2px);
+  }
+
+  .stack-pill .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dot-cyan   { background: var(--accent); box-shadow: 0 0 6px var(--accent); }
+  .dot-purple { background: var(--accent2); box-shadow: 0 0 6px var(--accent2); }
+  .dot-green  { background: var(--accent3); box-shadow: 0 0 6px var(--accent3); }
+  .dot-orange { background: #ff7c5c; box-shadow: 0 0 6px #ff7c5c; }
+
+  /* ============================================================
+     HIGHLIGHT CARDS
+  ============================================================ */
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .hl-card {
+    background: var(--bg-glass);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 18px 20px;
+    transition: all .25s;
+  }
+
+  .hl-card:hover {
+    border-color: rgba(0,212,255,.25);
+    background: rgba(0,212,255,.04);
+    transform: translateY(-2px);
+  }
+
+  .hl-icon {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .hl-title {
+    font-family: var(--font-head);
+    font-size: .88rem;
+    font-weight: 700;
+    color: var(--text-hi);
+    margin-bottom: 6px;
+  }
+
+  .hl-desc {
+    font-size: .78rem;
+    color: var(--text-mid);
+    line-height: 1.55;
+  }
+
+  /* ============================================================
+     SOFT SKILLS CHIPS
+  ============================================================ */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .chip {
+    font-size: .78rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    background: var(--bg-glass);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 100px;
+    transition: all .2s;
+    cursor: default;
+  }
+
+  .chip:hover {
+    color: var(--accent3);
+    border-color: rgba(0,255,178,.3);
+    background: rgba(0,255,178,.06);
+  }
+
+  /* ============================================================
+     EDUCATION & CERT
+  ============================================================ */
+  .edu-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .edu-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .edu-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: rgba(0,212,255,.12);
+    border: 1px solid rgba(0,212,255,.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+
+  .edu-info {}
+  .edu-degree { font-size: .9rem; font-weight: 600; color: var(--text-hi); }
+  .edu-school { font-size: .8rem; color: var(--text-mid); margin-top: 2px; }
+  .edu-year   { font-size: .75rem; color: var(--accent); margin-top: 4px; font-weight: 500; }
+
+  /* ============================================================
+     LANGUAGES
+  ============================================================ */
+  .lang-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .lang-item:last-child { border-bottom: none; }
+
+  .lang-name { font-size: .88rem; color: var(--text-hi); font-weight: 500; }
+
+  .lang-dots { display: flex; gap: 4px; }
+
+  .lang-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--border);
+    border: 1px solid var(--border);
+    transition: all .3s;
+  }
+
+  .lang-dot.filled {
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 6px var(--accent);
+  }
+
+  .lang-level { font-size: .74rem; color: var(--text-lo); }
+
+  /* ============================================================
+     FOOTER
+  ============================================================ */
+  .resume-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+  }
+
+  .resume-footer p {
+    font-size: .78rem;
+    color: var(--text-lo);
+    letter-spacing: .08em;
+  }
+
+  .resume-footer strong { color: var(--text-mid); }
+
+  /* ============================================================
+     ANIMATIONS
+  ============================================================ */
+  @keyframes fadeSlideDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* staggered animation for tl-items */
+  .tl-item:nth-child(1) { animation-delay: .05s; }
+  .tl-item:nth-child(2) { animation-delay: .15s; }
+  .tl-item:nth-child(3) { animation-delay: .25s; }
+  .tl-item:nth-child(4) { animation-delay: .35s; }
+
+  /* ============================================================
+     RESPONSIVE
+  ============================================================ */
+  @media (max-width: 800px) {
+    .main-grid { grid-template-columns: 1fr; }
+    .hero { grid-template-columns: 1fr; gap: 24px; padding: 32px 28px; }
+    .hero-right { display: flex; justify-content: flex-start; }
+    .highlights-grid { grid-template-columns: 1fr; }
+    .stack-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 500px) {
+    .page { padding: 20px 14px 60px; }
+    .card { padding: 22px 18px; }
+    .hero { padding: 24px 20px; }
+    .stack-grid { grid-template-columns: 1fr 1fr; }
+    .contact-strip { gap: 8px; }
+  }
+
+  /* ============================================================
+     PRINT STYLES (ATS friendly)
+  ============================================================ */
+  @media print {
+    body { background: #fff; color: #111; }
+    .card, .hero { box-shadow: none; border: 1px solid #ddd; }
+    body::before { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<main class="page" role="main">
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <header class="hero" role="banner">
+    <div class="hero-noise" aria-hidden="true"></div>
+
+    <div class="hero-left">
+      <div class="badge" role="note">Disponível para novas oportunidades</div>
+
+      <h1 class="hero-name">Leonardo <span>Saraiva</span></h1>
+      <p class="hero-title">Desenvolvedor Full Stack .NET Sênior · Blazor Specialist · Cloud &amp; DevOps</p>
+
+      <p class="hero-summary">
+        Profissional com <strong>sólida experiência</strong> no desenvolvimento de aplicações web corporativas de alto desempenho utilizando <strong>.NET, C#, Blazor e ASP.NET</strong>. Especializado na construção de sistemas escaláveis com <strong>arquitetura limpa, APIs REST robustas</strong> e integração com ambientes de <strong>nuvem e containers</strong>. Perfil hands-on com profunda capacidade analítica, resolução de problemas complexos e visão de engenharia de ponta a ponta.
+      </p>
+
+      <nav class="contact-strip" aria-label="Informações de contato">
+        <span class="contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          leonardosaraiva1911@gmail.com
+        </span>
+        <span class="contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.8 19.79 19.79 0 0 1 1.6 2.2 2 2 0 0 1 3.55 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.08 6.08l1.28-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +55 (19) 9 9276-9843
+        </span>
+        <span class="contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          São Paulo, SP — Brasil
+        </span>
+        <span class="contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          linkedin.com/in/leonardosaraiva19
+        </span>
+        <span class="contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          github.com/Saraiva0dz9
+        </span>
+      </nav>
+    </div>
+
+    <div class="hero-right" aria-hidden="true">
+      <div class="avatar-wrap">
+        <div class="avatar-ring">
+          <div class="avatar-inner">LS</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN GRID
+  ============================================================ -->
+  <div class="main-grid">
+
+    <!-- LEFT COLUMN -->
+    <div class="col-left">
+
+      <!-- EXPERIENCE -->
+      <section class="card" aria-labelledby="exp-title">
+        <div class="section-label">
+          <h2 id="exp-title">Experiência Profissional</h2>
+        </div>
+
+        <ol class="timeline" role="list">
+
+          <!-- Job 1 -->
+          <li class="tl-item">
+            <div class="tl-line" aria-hidden="true">
+              <div class="tl-dot"></div>
+              <div class="tl-connector"></div>
+            </div>
+            <div class="tl-content">
+              <div class="tl-meta">
+                <span class="tl-company">Accenture</span>
+                <span class="tl-period">Abr 2025 — Presente</span>
+              </div>
+              <p class="tl-role">Desenvolvedor Full Stack .NET Pleno</p>
+              <ul class="tl-bullets">               
+                <li>Projetou modelo de dados complexo no <strong>Oracle Database</strong>, desenvolvendo procedures, functions PL/SQL e queries otimizadas que reduziram em 65% o tempo de resposta de relatórios críticos.</li>                
+				<li>Realizou <strong>análise aprofundada de regras de negócio</strong>, documentando fluxos complexos, identificando inconsistências e propondo melhorias de lógica e performance antes da implementação.</li>
+				<li>Desenvolveu e manteve aplicações desktop com <strong>Windows Forms</strong>, incluindo componentes de UI personalizados, integração com banco de dados e padrões de eventos assíncronos.</li>
+				<li>Implementou <strong>geração de relatórios eficientes utilizando PL/SQL</strong>, com procedures otimizadas, cursores e consultas analíticas, reduzindo tempo de processamento e facilitando exportação de dados.</li>
+				<li>Aplicou princípios de <strong>Vibe Coding</strong> para acelerar prototipagem e iteração, mantendo sintonia entre requisitos de produto e entrega contínua de valor com feedback constante.</li>
+				<li>Utilizou técnicas de <strong>Inteligência Artificial Generativa (Gen IA)</strong> para automação de código, sugestão de refatorações, geração de testes e documentação inteligente em projetos .NET e SQL.</li>                
+              </ul>
+              <div class="tl-tags">
+                <span class="tag">Windows Forms</span>               
+                <span class="tag">Oracle DB</span>                                
+                <span class="tag">Vibe Coding</span>
+                <span class="tag">PL-SQL</span>
+                <span class="tag">Regras de negocios</span>
+				<span class="tag">Azure DevOps</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- Job 2 -->
+          <li class="tl-item">
+            <div class="tl-line" aria-hidden="true">
+              <div class="tl-dot purple"></div>
+              <div class="tl-connector"></div>
+            </div>
+            <div class="tl-content">
+              <div class="tl-meta">
+                <span class="tl-company">Areco</span>
+                <span class="tl-period">Jun 2024 — Abr 2025</span>
+              </div>
+              <p class="tl-role">Desenvolvedor Full Stack .NET Pleno</p>
+              <ul class="tl-bullets">
+				<li>Liderou o desenvolvimento de <strong>plataforma corporativa em Blazor Server</strong> com mais de 80 componentes dinâmicos reutilizáveis, reduzindo em 40% o tempo de entrega de novas features.</li>
+                <li>Arquitetou e implementou <strong>Web APIs REST escaláveis em ASP.NET Core</strong> consumidas por múltiplos clients web e mobile, com rate limiting, versionamento e documentação via Swagger/OpenAPI.</li>
+				<li>Integrou aplicações com <strong>AWS S3, SQS e Lambda</strong> e orquestrou ambientes via <strong>Docker e Kubernetes</strong> em pipeline CI/CD automatizado com Jenkins e Azure DevOps.</li>
+				<li>Resolveu problemas avançados de <strong>renderização, estado e sincronização em Blazor</strong> (SignalR, EventCallback, JSInterop), garantindo estabilidade e UX consistente em cenários de alta concorrência.</li>
+                <li>Utilizou <strong>Syncfusion Blazor</strong> para construção de dashboards analíticos complexos com grids virtualizados, gráficos em tempo real e relatórios exportáveis.</li>				
+              </ul>
+              <div class="tl-tags">
+                <span class="tag">.NET</span>
+                <span class="tag">SQL Server</span>
+                <span class="tag">Clean Architecture</span>
+                <span class="tag">JWT/OAuth2</span>                
+                <span class="tag">xUnit</span>
+                <span class="tag">Docker</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- Job 3 -->
+          <li class="tl-item">
+            <div class="tl-line" aria-hidden="true">
+              <div class="tl-dot green"></div>
+              <div class="tl-connector"></div>
+            </div>
+            <div class="tl-content">
+              <div class="tl-meta">
+                <span class="tl-company">Areco</span>
+                <span class="tl-period">Out 2023 — Jun 2024</span>
+              </div>
+              <p class="tl-role">Desenvolvedor Full Stack .NET Júnior</p>
+              <ul class="tl-bullets">                             								 
+                <li>Desenvolveu e sustentou <strong>APIs RESTful em .NET 5/6</strong> para sistema ERP financeiro, integrando com ERPs legados via middleware proprietário, processando mais de 1M de transações/dia.</li>
+                <li>Aplicou princípios <strong>SOLID e Clean Architecture</strong>, refatorando módulos críticos e aumentando cobertura de testes unitários de 18% para 74% com xUnit e Moq.</li>
+                <li>Modelou e otimizou banco de dados <strong>SQL Server</strong> com índices compostos, planos de execução e reescrita de queries que eliminaram gargalos de performance em relatórios gerenciais.</li>
+                <li>Implementou autenticação e autorização com <strong>ASP.NET Identity e JWT</strong>, incluindo integração OAuth2 com Azure Active Directory para SSO corporativo.</li>
+                <li>Configurou e manteve ambientes <strong>Docker e Portainer</strong>, gerenciando ciclo de vida de containers e automação de deploys com scripts Shell e Azure DevOps Pipelines.</li>
+              </ul>
+              <div class="tl-tags">
+                <span class="tag">ASP.NET MVC</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Docker</span>
+                <span class="tag">HTML/CSS/JS</span>
+                <span class="tag">Scrum</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- Job 4 -->
+          <li class="tl-item">
+            <div class="tl-line" aria-hidden="true">
+              <div class="tl-dot" style="background:#ff7c5c;box-shadow:0 0 10px #ff7c5c"></div>
+            </div>
+            <div class="tl-content">
+              <div class="tl-meta">
+                <span class="tl-company">Estágio - Areco</span>
+                <span class="tl-period">Out 2022 — Out 2023</span>
+              </div>
+              <p class="tl-role">Desenvolvedor Web | .NET &amp; Full Stack</p>
+              <ul class="tl-bullets">
+                <li>Entregou sistemas de gestão customizados em <strong>C#, e SQL Server</strong>, com foco em regras de negócio específicas e integração com sistemas legados.</li>
+                <li>Desenvolveu primeiras experiências em <strong>automação de tarefas, scripts de ETL e integração via consumo de APIs externas</strong> (REST e SOAP), consolidando base sólida em integração de sistemas.</li>
+              </ul>
+            </div>
+          </li>
+
+        </ol>
+      </section>
+
+      <!-- HIGHLIGHTS -->
+      <section class="card" aria-labelledby="hl-title">
+        <div class="section-label">
+          <h2 id="hl-title">Diferenciais Técnicos</h2>
+        </div>
+        <div class="highlights-grid">
+          <div class="hl-card">
+            <span class="hl-icon" role="img" aria-label="Blazor">⚡</span>
+            <p class="hl-title">Especialista Blazor</p>
+            <p class="hl-desc">Expertise profunda em componentes dinâmicos, renderização server-side, JSInterop, Cascading Values, EventCallback e gestão avançada de estado em aplicações de grande escala.</p>
+          </div>
+          <div class="hl-card">
+            <span class="hl-icon" role="img" aria-label="APIs">🔗</span>
+            <p class="hl-title">APIs &amp; Integrações</p>
+            <p class="hl-desc">Design e implementação de APIs REST robustas, escaláveis e versionadas. Experiência com padrões de integração, middleware, mensageria e event-driven architecture.</p>
+          </div>
+          <div class="hl-card">
+            <span class="hl-icon" role="img" aria-label="Banco de Dados">🗄️</span>
+            <p class="hl-title">SQL Avançado &amp; Oracle</p>
+            <p class="hl-desc">Modelagem complexa, procedures PL/SQL, functions, triggers, índices avançados e tuning de queries em Oracle, SQL Server e PostgreSQL em ambientes de alta volumetria.</p>
+          </div>
+          <div class="hl-card">
+            <span class="hl-icon" role="img" aria-label="Cloud">☁️</span>
+            <p class="hl-title">Cloud &amp; DevOps</p>
+            <p class="hl-desc">Operação prática com AWS, GCP, Docker, Kubernetes, Jenkins e Azure DevOps. Construção de pipelines CI/CD, infraestrutura como código e gestão de containers em produção.</p>
+          </div>
+          <div class="hl-card">
+            <span class="hl-icon" role="img" aria-label="IA">🤖</span>
+            <p class="hl-title">GenAI &amp; Vibe Coding</p>
+            <p class="hl-desc">Fluente no uso de IA generativa como copiloto de desenvolvimento: geração de código, revisão, documentação automatizada, refatoração inteligente e exploração de novos domínios.</p>
+          </div>
+          <div class="hl-card">
+            <span class="hl-icon" role="img" aria-label="Arquitetura">🏗️</span>
+            <p class="hl-title">Arquitetura &amp; SOLID</p>
+            <p class="hl-desc">Aplicação consistente de Clean Architecture, DDD, princípios SOLID, Design Patterns e Code Review criterioso para garantir código sustentável, testável e evolutivo.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-right">
+
+      <!-- CORE SKILLS -->
+      <section class="card" aria-labelledby="skills-title">
+        <div class="section-label">
+          <h2 id="skills-title">Competências Técnicas</h2>
+        </div>
+        <div class="skill-list" role="list">
+          <div class="skill-item" role="listitem">
+            <div class="skill-header">
+              <span class="skill-name">C# / .NET Core</span>
+              <span class="skill-pct">95%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+          </div>
+          <div class="skill-item" role="listitem">
+            <div class="skill-header">
+              <span class="skill-name">Blazor (Server &amp; WASM)</span>
+              <span class="skill-pct">92%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+          </div>
+          <div class="skill-item" role="listitem">
+            <div class="skill-header">
+              <span class="skill-name">ASP.NET Core / Web API</span>
+              <span class="skill-pct">93%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="93"></div></div>
+          </div>
+          <div class="skill-item" role="listitem">
+            <div class="skill-header">
+              <span class="skill-name">SQL / Oracle / PL-SQL</span>
+              <span class="skill-pct">88%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill green" data-width="88"></div></div>
+          </div>
+          <div class="skill-item" role="listitem">
+            <div class="skill-header">
+              <span class="skill-name">Entity Framework Core</span>
+              <span class="skill-pct">87%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="87"></div></div>
+          </div>
+          <div class="skill-item" role="listitem">
+            <div class="skill-header">
+              <span class="skill-name">Docker / Kubernetes</span>
+              <span class="skill-pct">80%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill purple" data-width="80"></div></div>
+          </div>
+          <div class="skill-item" role="listitem">
+            <div class="skill-header">
+              <span class="skill-name">AWS / Google Cloud</span>
+              <span class="skill-pct">78%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill purple" data-width="78"></div></div>
+          </div>
+          <div class="skill-item" role="listitem">
+            <div class="skill-header">
+              <span class="skill-name">Angular / HTML / CSS / JS</span>
+              <span class="skill-pct">82%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill green" data-width="82"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TECH STACK -->
+      <section class="card" aria-labelledby="stack-title">
+        <div class="section-label">
+          <h2 id="stack-title">Stack Tecnológica</h2>
+        </div>
+        <div class="stack-grid scroll-container" style="overflow: auto;" role="list">
+          <div class="stack-pill" role="listitem"><span class="dot dot-cyan"></span>C#</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-cyan"></span>.NET 8</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-cyan"></span>Blazor</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-cyan"></span>ASP.NET</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-cyan"></span>Web API</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-cyan"></span>EF Core</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-green"></span>Oracle DB</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-green"></span>SQL Server</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-green"></span>PostgreSQL</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-green"></span>PL/SQL</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-green"></span>MySQL</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-purple"></span>AWS</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-purple"></span>GCP</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-purple"></span>Docker</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-purple"></span>Kubernetes</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-purple"></span>Jenkins</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-purple"></span>MinIO</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-orange"></span>Angular</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-orange"></span>JavaScript</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-orange"></span>Syncfusion</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-cyan"></span>SOLID</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-cyan"></span>Clean Arch</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-green"></span>JSInterop</div>
+          <div class="stack-pill" role="listitem"><span class="dot dot-purple"></span>Azure DevOps</div>
+        </div>
+      </section>
+
+      <!-- SOFT SKILLS -->
+      <section class="card" aria-labelledby="soft-title">
+        <div class="section-label">
+          <h2 id="soft-title">Habilidades Comportamentais</h2>
+        </div>
+        <div class="chips" role="list">
+          <span class="chip" role="listitem">Resolução de Problemas</span>
+          <span class="chip" role="listitem">Comunicação Eficaz</span>
+          <span class="chip" role="listitem">Pensamento Analítico</span>
+          <span class="chip" role="listitem">Aprendizado Rápido</span>
+          <span class="chip" role="listitem">Adaptabilidade</span>
+          <span class="chip" role="listitem">Trabalho em Equipe</span>
+          <span class="chip" role="listitem">Proatividade</span>
+          <span class="chip" role="listitem">Perfil Hands-on</span>
+          <span class="chip" role="listitem">Capacidade Investigativa</span>
+          <span class="chip" role="listitem">Organização</span>
+          <span class="chip" role="listitem">Autonomia</span>
+          <span class="chip" role="listitem">Visão de Produto</span>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="card" aria-labelledby="edu-title">
+        <div class="section-label">
+          <h2 id="edu-title">Formação &amp; Certificações</h2>
+        </div>
+
+		<div class="scroll-container" style="overflow: auto; max-height: 500px;">
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">🎓</div>
+			  <div class="edu-info">
+				<p class="edu-degree">Tecnólogo em analise e desenvolvimento de sistemas</p>
+				<p class="edu-school">Universidade Estácio de Sá</p>
+				<p class="edu-year">2022 — 2024</p>
+			  </div>
+			</div>
+			
+		   <div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">🚀</div>
+			  <div class="edu-info">
+				<p class="edu-degree">Formação Desenvolvedor .NET</p>
+				<p class="edu-school">desenvolvedor.io</p>
+				<p class="edu-year">2025</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">🖥️</div>
+			  <div class="edu-info">
+				<p class="edu-degree">Formação Desenvolvedor Full Stack .NET</p>
+				<p class="edu-school">desenvolvedor.io</p>
+				<p class="edu-year">2025</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">⚡</div>
+			  <div class="edu-info">
+				<p class="edu-degree">Formação ASP.NET Core Expert</p>
+				<p class="edu-school">desenvolvedor.io</p>
+				<p class="edu-year">2025</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">🗄️</div>
+			  <div class="edu-info">
+				<p class="edu-degree">Formação Data Access Expert</p>
+				<p class="edu-school">desenvolvedor.io</p>
+				<p class="edu-year">2025</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">🌐</div>
+			  <div class="edu-info">
+				<p class="edu-degree">Fundamentos de APIs em ASP.NET Core</p>
+				<p class="edu-school">desenvolvedor.io</p>
+				<p class="edu-year">2025</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">⚙️</div>
+			  <div class="edu-info">
+				<p class="edu-degree">Iniciando com ASP.NET Core</p>
+				<p class="edu-school">desenvolvedor.io</p>
+				<p class="edu-year">2025</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">🔷</div>
+			  <div class="edu-info">
+				<p class="edu-degree">Fundamentos do Blazor</p>
+				<p class="edu-school">desenvolvedor.io</p>
+				<p class="edu-year">2025</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">🏢</div>
+			  <div class="edu-info">
+				<p class="edu-degree">ASP.NET Core Enterprise Applications</p>
+				<p class="edu-school">desenvolvedor.io</p>
+				<p class="edu-year">2025</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">🔌</div>
+			  <div class="edu-info">
+				<p class="edu-degree">REST com ASP.NET Core WebAPI</p>
+				<p class="edu-school">desenvolvedor.io</p>
+				<p class="edu-year">2025</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">🧩</div>
+			  <div class="edu-info">
+				<p class="edu-degree">Fundamentos do ASP.NET MVC</p>
+				<p class="edu-school">desenvolvedor.io</p>
+				<p class="edu-year">2025</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">🛢️</div>
+			  <div class="edu-info">
+				<p class="edu-degree">Introdução ao Entity Framework Core</p>
+				<p class="edu-school">desenvolvedor.io</p>
+				<p class="edu-year">2025</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">🗃️</div>
+			  <div class="edu-info">
+				<p class="edu-degree">Dominando o Entity Framework Core</p>
+				<p class="edu-school">desenvolvedor.io</p>
+				<p class="edu-year">2025</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">🛠️</div>
+			  <div class="edu-info">
+				<p class="edu-degree">SQL para Desenvolvedores</p>
+				<p class="edu-school">desenvolvedor.io</p>
+				<p class="edu-year">2025</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">💻</div>
+			  <div class="edu-info">
+				<p class="edu-degree">Fundamentos do C#</p>
+				<p class="edu-school">desenvolvedor.io</p>
+				<p class="edu-year">2024</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">☁️</div>
+			  <div class="edu-info">
+				<p class="edu-degree">Imersão Cloud</p>
+				<p class="edu-school">The Cloud Bootcamp</p>
+				<p class="edu-year">2023</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">🗄️</div>
+			  <div class="edu-info">
+				<p class="edu-degree">Entity Framework Core: banco de dados de forma eficiente</p>
+				<p class="edu-school">Alura</p>
+				<p class="edu-year">2023</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">🛢️</div>
+			  <div class="edu-info">
+				<p class="edu-degree">Microsoft SQL Server 2022: manipulando dados</p>
+				<p class="edu-school">Alura</p>
+				<p class="edu-year">2023</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">⚙️</div>
+			  <div class="edu-info">
+				<p class="edu-degree">C# Criando e distribuindo bibliotecas em .NET</p>
+				<p class="edu-school">Alura</p>
+				<p class="edu-year">2023</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">💻</div>
+			  <div class="edu-info">
+				<p class="edu-degree">C#: explorando a linguagem</p>
+				<p class="edu-school">Alura</p>
+				<p class="edu-year">2023</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">🌐</div>
+			  <div class="edu-info">
+				<p class="edu-degree">.NET 6: criando uma Web API</p>
+				<p class="edu-school">Alura</p>
+				<p class="edu-year">2023</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">🧠</div>
+			  <div class="edu-info">
+				<p class="edu-degree">C#: orientação a objetos</p>
+				<p class="edu-school">Alura</p>
+				<p class="edu-year">2022</p>
+			  </div>
+			</div>
+
+			<div class="edu-item">
+			  <div class="edu-icon" aria-hidden="true">🏅</div>
+			  <div class="edu-info">
+				<p class="edu-degree">Fundamentos do C#</p>
+				<p class="edu-school">balta.io</p>
+				<p class="edu-year">2022</p>
+			  </div>
+			</div>
+		</div>        
+		
+      </section>
+
+      <!-- LANGUAGES -->
+      <section class="card" aria-labelledby="lang-title">
+        <div class="section-label">
+          <h2 id="lang-title">Idiomas</h2>
+        </div>
+
+        <div class="lang-item">
+          <span class="lang-name">Português</span>
+          <div>
+            <div class="lang-dots" aria-label="Fluente — 5 de 5" role="img">
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+            </div>
+            <p class="lang-level" style="margin-top:4px;font-size:.72rem;text-align:right">Nativo</p>
+          </div>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">Inglês</span>
+          <div>
+            <div class="lang-dots" aria-label="Intermediário — 3 de 5" role="img">
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot"></div>
+              <div class="lang-dot"></div>
+            </div>
+            <p class="lang-level" style="margin-top:4px;font-size:.72rem;text-align:right">Intermediário</p>
+          </div>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">Espanhol</span>
+          <div>
+            <div class="lang-dots" aria-label="Básico — 2 de 5" role="img">
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot"></div>
+              <div class="lang-dot"></div>
+              <div class="lang-dot"></div>
+            </div>
+            <p class="lang-level" style="margin-top:4px;font-size:.72rem;text-align:right">Básico</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div><!-- /main-grid -->
+
+  <!-- FOOTER -->
+  <footer class="resume-footer" role="contentinfo">
+    <p>
+      <strong>Leonardo Saraiva</strong> · Desenvolvedor Full Stack .NET Pleno ·
+      São Paulo, SP · Atualizado em 2026
+    </p>
+  </footer>
+
+</main>
+
+<script>
+  /* ============================================================
+     SKILL BAR ANIMATION — Intersection Observer
+  ============================================================ */
+  const fills = document.querySelectorAll('.skill-fill[data-width]');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const w  = el.getAttribute('data-width');
+        // slight delay so CSS transition plays from 0
+        requestAnimationFrame(() => {
+          el.style.width = w + '%';
+        });
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  fills.forEach(f => observer.observe(f));
+
+  /* ============================================================
+     SUBTLE CARD ENTRANCE
+  ============================================================ */
+  const cards = document.querySelectorAll('.card, .hero');
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        cardObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.07 });
+
+  cards.forEach(c => {
+    c.style.opacity = '0';
+    c.style.transform = 'translateY(18px)';
+    c.style.transition = 'opacity .5s ease, transform .5s ease';
+    cardObserver.observe(c);
+  });
+</script>
+
+</body>
+</html>
